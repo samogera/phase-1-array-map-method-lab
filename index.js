@@ -1,4 +1,18 @@
-const tutorials = [
+ // Function to convert the first letter of a string to uppercase
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Function to convert a string to title case
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, capitalizeFirstLetter);
+}
+
+// Function to convert each tutorial name to title case
+function titleCased() {
+  return tutorials.map(toTitleCase);
+}
+ const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
   'implementing Blockchain Web API',
@@ -11,6 +25,4 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+console.log(titleCased());
